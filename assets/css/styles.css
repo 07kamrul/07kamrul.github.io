@@ -117,7 +117,7 @@ a.dotted-link:hover {
 
 /* ======= Header ======= */
 .header {
-  padding: 30px 0;
+  padding: 10px 0;
   background: #f5f5f5;
   border-top: 10px solid #778492;
 }
@@ -360,6 +360,63 @@ a.dotted-link:hover {
 }
 
 .experience .item .title .year {
+  color: #999;
+  font-weight: normal;
+}
+
+.resume .item {
+  margin-bottom: 30px;
+}
+
+.resume .item .title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.resume .item .title .place {
+  color: #999;
+  font-weight: normal;
+}
+
+.resume .item .title .place a {
+  color: #999;
+}
+
+.resume .item .title .place a:hover {
+  color: #666666;
+}
+
+.resume .item .title .year {
+  color: #999;
+  font-weight: normal;
+}
+.contact .item {
+  margin-bottom: 30px;
+}
+
+.contactcontact .item .title {
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  line-height: 1.5;
+}
+
+.contact .item .title .place {
+  color: #999;
+  font-weight: normal;
+}
+
+.contact .item .title .place a {
+  color: #999;
+}
+
+.contact .item .title .place a:hover {
+  color: #666666;
+}
+
+.contact .item .title .year {
   color: #999;
   font-weight: normal;
 }
