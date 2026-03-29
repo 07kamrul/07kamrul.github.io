@@ -907,6 +907,62 @@ img { max-width: 100%; }
   line-height: 1.7;
 }
 
+.project-policy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-policy-card {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(132,55,56,0.08);
+}
+
+.project-policy-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.project-policy-summary {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}
+
+.project-policy-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.project-policy-list li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.92rem;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.project-policy-list li::before {
+  content: '';
+  position: absolute;
+  top: 0.65rem;
+  left: 0;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
   .sidebar { display: none; }
@@ -947,6 +1003,10 @@ img { max-width: 100%; }
   .project-detail-meta-grid {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+
+  .project-policy-grid {
+    grid-template-columns: 1fr;
   }
 
   .project-detail-section-title {

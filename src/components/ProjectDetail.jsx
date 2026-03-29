@@ -91,6 +91,25 @@ export default function ProjectDetail() {
               ))}
             </div>
           </div>
+
+          <div className="project-detail-section">
+            <h2 className="project-detail-section-title">Privacy Policy</h2>
+            <p className="project-detail-lead">{project.privacyPolicy?.intro}</p>
+
+            <div className="project-policy-grid">
+              {project.privacyPolicy?.sections?.map((section) => (
+                <section key={section.title} className="project-policy-card">
+                  <h3 className="project-policy-title">{section.title}</h3>
+                  <p className="project-policy-summary">{section.summary}</p>
+                  <ul className="project-policy-list">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
         </article>
       </section>
       <ResumeFooter />
