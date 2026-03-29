@@ -11,12 +11,14 @@ const navLinks = [
   { id: 'contact',    label: 'Contact' },
 ];
 
+const profileImage = `${import.meta.env.BASE_URL}profile.jpg`;
+
 export default function Sidebar({ activeSection }) {
   return (
     <aside className="sidebar">
       {/* Profile photo */}
       <img
-        src="/profile.jpg"
+        src={profileImage}
         alt="Md. Kamrul Hasan"
         className="sidebar__photo"
         onError={(e) => {

@@ -4,6 +4,8 @@ import { FiGithub, FiLinkedin, FiMail, FiChevronDown } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
 
+const profileImage = `${import.meta.env.BASE_URL}profile.jpg`;
+
 const useTypewriter = (words, speed = 80, pause = 1800) => {
   const [display, setDisplay] = useState('');
   const [wordIdx, setWordIdx] = useState(0);
@@ -133,7 +135,7 @@ export default function Hero() {
           <div className="hero__photo-ring hero__photo-ring--inner" />
           <div className="hero__photo-container">
             <img
-              src="/profile.jpg"
+              src={profileImage}
               alt="Md. Kamrul Hasan"
               className="hero__photo"
               onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
