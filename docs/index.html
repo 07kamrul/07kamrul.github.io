@@ -14,5 +14,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      if (
+        window.location.hostname.endsWith('github.io') &&
+        !window.location.pathname.startsWith('/docs/')
+      ) {
+        const destination = `/docs/${window.location.search}${window.location.hash}`;
+        window.location.replace(destination);
+      }
+    </script>
   </body>
 </html>
