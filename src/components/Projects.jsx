@@ -1,12 +1,11 @@
-import { useNavigate } from 'react-router-dom';
 import { FiCode } from 'react-icons/fi';
 import { projects } from '../data/portfolioData';
 
 export default function Projects() {
-  const navigate = useNavigate();
 
   const handleProjectClick = (projectId) => {
-    navigate(`/projects/${projectId}`);
+    const targetUrl = `${window.location.origin}/projects/${projectId}`;
+    window.open(targetUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
