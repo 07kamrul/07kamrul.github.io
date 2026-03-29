@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const navLinks = [
   { id: 'about',      label: 'About' },
@@ -9,15 +10,10 @@ const navLinks = [
   { id: 'contact',    label: 'Contact' },
 ];
 
-const scrollTo = (id) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-};
-
 export default function MobileNav({ activeSection }) {
   const [open, setOpen] = useState(false);
 
-  const handleNav = (id) => {
-    scrollTo(id);
+  const handleNav = () => {
     setOpen(false);
   };
 
@@ -37,14 +33,14 @@ export default function MobileNav({ activeSection }) {
       {open && (
         <div className="mobile-menu">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.id}
-              onClick={() => handleNav(link.id)}
+              to={`/?section=${link.id}`}
+              onClick={handleNav}
               className={activeSection === link.id ? 'active' : ''}
-              style={{ cursor: 'pointer' }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
       )}

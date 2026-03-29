@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 
@@ -9,10 +10,6 @@ const navLinks = [
   { id: 'projects',   label: 'Projects' },
   { id: 'contact',    label: 'Contact' },
 ];
-
-const scrollTo = (id) => {
-  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-};
 
 export default function Sidebar({ activeSection }) {
   return (
@@ -38,14 +35,13 @@ export default function Sidebar({ activeSection }) {
       {/* Nav */}
       <nav className="sidebar__nav">
         {navLinks.map((link) => (
-          <a
+          <Link
             key={link.id}
-            onClick={() => scrollTo(link.id)}
+            to={`/?section=${link.id}`}
             className={activeSection === link.id ? 'active' : ''}
-            style={{ cursor: 'pointer' }}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </nav>
 

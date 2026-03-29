@@ -1,7 +1,14 @@
+import { useNavigate } from 'react-router-dom';
 import { FiCode } from 'react-icons/fi';
 import { projects } from '../data/portfolioData';
 
 export default function Projects() {
+  const navigate = useNavigate();
+
+  const handleProjectClick = (projectId) => {
+    navigate(`/projects/${projectId}`);
+  };
+
   return (
     <div className="resume-section">
       <h2 className="section-heading">
@@ -11,7 +18,20 @@ export default function Projects() {
 
       <div className="projects-list">
         {projects.map((project) => (
-          <div key={project.id} className="project-item">
+          <div
+            key={project.id}
+            className="project-item"
+            onClick={() => handleProjectClick(project.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                handleProjectClick(project.id);
+              }
+            }}
+            title="Click to view full project details"
+          >
             <div className="project-item__header">
               <div className="project-item__title">
                 {project.icon} {project.title}

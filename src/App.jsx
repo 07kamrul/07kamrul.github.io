@@ -1,15 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './index.css';
-import Sidebar from './components/Sidebar';
-import MobileNav from './components/MobileNav';
 import About from './components/About';
 import Experience from './components/Experience';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import ProjectDetail from './components/ProjectDetail';
+import ResumeFooter from './components/ResumeFooter';
+import ResumeShell from './components/ResumeShell';
 
-function App() {
+function Portfolio() {
+  const location = useLocation();
   const [activeSection, setActiveSection] = useState('about');
 
   useEffect(() => {
@@ -27,27 +30,39 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  return (
-    <div className="resume-layout">
-      <Sidebar activeSection={activeSection} />
-      <MobileNav activeSection={activeSection} />
+  useEffect(() => {
+    const sectionId = new URLSearchParams(location.search).get('section');
 
-      <main className="content-area">
+    if (!sectionId) {
+      return;
+    }
+
+    const section = document.getElementById(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [location.search]);
+
+  return (
+    <ResumeShell activeSection={activeSection}>
         <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
         <section id="education"><Education /></section>
         <section id="skills"><Skills /></section>
         <section id="projects"><Projects /></section>
         <section id="contact"><Contact /></section>
+        <ResumeFooter />
+    </ResumeShell>
+  );
+}
 
-        <footer className="resume-footer">
-          <p>
-            © {new Date().getFullYear()} Md. Kamrul Hasan &middot; Dhaka, Bangladesh &middot;{' '}
-            <a href="https://github.com/07kamrul" target="_blank" rel="noreferrer">GitHub</a>
-          </p>
-        </footer>
-      </main>
-    </div>
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Portfolio />} />
+      <Route path="/projects/:projectId" element={<ProjectDetail />} />
+    </Routes>
   );
 }
 

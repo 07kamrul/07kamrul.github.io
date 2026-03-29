@@ -45,19 +45,6 @@ export const topSkills = [
 export const experiences = [
   {
     id: 1,
-    company: "COLGIS",
-    location: "Tokyo, Japan (Remote)",
-    role: "Programmer",
-    period: "Feb 2024 – Present",
-    type: "current",
-    sector: "Information & Communication",
-    website: "https://recruit-bd.colgis.jp/",
-    description:
-      "Contributing as a programmer by developing efficient web and mobile applications using Java, Spring Boot, C#.NET, and Flutter—enhancing system performance, user engagement, and real-time responsiveness through innovative, scalable solutions.",
-    tags: ["Java", "Spring Boot", "C#.NET", "Flutter", "GIS"],
-  },
-  {
-    id: 2,
     company: "ASA Bangladesh",
     location: "Dhaka, Bangladesh",
     role: "Software Engineer",
@@ -70,7 +57,7 @@ export const experiences = [
     tags: ["C#", ".NET 8", "AngularJS", "SQL Server", "MVC", "Microservices"],
   },
   {
-    id: 3,
+    id: 2,
     company: "CTrends Software & Services Ltd.",
     location: "Dhaka, Bangladesh",
     role: "Java Programmer",
@@ -83,7 +70,7 @@ export const experiences = [
     tags: ["Java", "Spring Boot", "Flutter", "RESTful APIs", "GIS", "KYC"],
   },
   {
-    id: 4,
+    id: 3,
     company: "Naztech Inc.",
     location: "Dhaka, Bangladesh",
     role: "Junior Software Developer",
@@ -101,7 +88,7 @@ export const projects = [
   {
     id: 1,
     title: "GPS Tracking Application",
-    company: "Colgis",
+    company: "Self",
     period: "Dec 2024 – Present",
     description:
       "Built a location-based messaging app using Flutter, Laravel (backend), and GIS with OSM maps. The app connects users within a 10-meter radius, offering real-time chat, live location updates, and an interactive map to boost proximity-based engagement.",
@@ -112,7 +99,7 @@ export const projects = [
   {
     id: 2,
     title: "Server Abnormality Alert App",
-    company: "Colgis",
+    company: "Self",
     period: "Sep 2024 – Nov 2024",
     description:
       "Developed a Flutter app that polls server health every 5 minutes via API, triggering loud alerts with a tap-to-silence feature. This improved response times and system reliability by minimizing downtime.",
@@ -123,7 +110,7 @@ export const projects = [
   {
     id: 3,
     title: "MEIKO — Japanese Learning Platform",
-    company: "Colgis",
+    company: "Self",
     period: "Apr 2024 – Aug 2024",
     description:
       "Enhanced the MEIKO platform using C# ASP.NET, JavaScript, MSSQL, and Flutter. Implemented scheduled push notifications (1–4 weeks post-login) with dynamic local rescheduling. Boosted user re-engagement by 30%.",
@@ -134,7 +121,7 @@ export const projects = [
   {
     id: 4,
     title: "MakeShop — Batch Email Automation",
-    company: "Colgis",
+    company: "Self",
     period: "Feb 2024 – Apr 2024",
     description:
       "Developed a Java-based batch process for Medipal Holdings to automate email alerts and clean outdated images, improving efficiency, reducing storage, and enhancing performance with robust error handling and logging.",
