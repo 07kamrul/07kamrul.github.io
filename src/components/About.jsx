@@ -2,11 +2,14 @@ import { FiGithub, FiLinkedin, FiMail, FiPhone, FiYoutube, FiTwitter } from 'rea
 import { personalInfo } from '../data/portfolioData';
 
 export default function About() {
+  const [firstName, ...restName] = personalInfo.name.split(' ');
+  const lastName = restName.join(' ');
+
   return (
     <div className="resume-section">
       {/* Large name block */}
       <div className="about-name">
-        Md. Kamrul<span> Hasan</span>
+        {firstName}<span> {lastName}</span>
       </div>
 
       <div className="about-subtitle">{personalInfo.title}</div>

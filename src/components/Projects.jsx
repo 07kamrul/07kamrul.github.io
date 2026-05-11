@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { FiCode } from 'react-icons/fi';
+import { FiCalendar, FiCode } from 'react-icons/fi';
 import { projects } from '../data/portfolioData';
 
 const monthOrder = {
@@ -39,7 +39,7 @@ const parseDateToken = (token) => {
 };
 
 const getProjectSortValue = (period) => {
-  const [start = '', end = ''] = period.split('–').map((item) => item.trim());
+  const [start = '', end = ''] = period.split('-').map((item) => item.trim());
   const endValue = parseDateToken(end || start);
   const startValue = parseDateToken(start);
 
@@ -96,7 +96,7 @@ export default function Projects() {
               </div>
               <div className="project-item__company">{project.company}</div>
             </div>
-            <div className="project-item__period">📅 {project.period}</div>
+            <div className="project-item__period"><FiCalendar /> {project.period}</div>
             <p className="project-item__desc">{project.description}</p>
             <div className="exp-item__tags">
               {project.tags.map((t) => (

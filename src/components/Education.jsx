@@ -23,7 +23,7 @@ export default function Education() {
                 edu.institution
               )}
             </div>
-            <div className="edu-item__meta">📍 {edu.location}</div>
+            <div className="edu-item__meta">{edu.location}</div>
             {edu.grade && (
               <div className="edu-item__detail">
                 <strong>Grade:</strong> {edu.grade}

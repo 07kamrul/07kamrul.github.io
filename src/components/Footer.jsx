@@ -52,7 +52,7 @@ export default function Footer() {
 
       <div className="footer__bottom">
         <p>
-          © {new Date().getFullYear()} Md. Kamrul Hasan · Dhaka, Bangladesh
+          &copy; {new Date().getFullYear()} {personalInfo.name} &middot; {personalInfo.location}
         </p>
         <motion.button
           className="footer__top-btn"

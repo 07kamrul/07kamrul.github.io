@@ -22,7 +22,7 @@ export default function Experience() {
                 exp.company
               )}
             </div>
-            <div className="exp-item__location">📍 {exp.location}</div>
+            <div className="exp-item__location">{exp.location}</div>
             <p className="exp-item__desc">{exp.description}</p>
             <div className="exp-item__tags">
               {exp.tags.map((t) => (

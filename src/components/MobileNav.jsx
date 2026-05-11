@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { personalInfo } from '../data/portfolioData';
 
 const navLinks = [
   { id: 'about',      label: 'About' },
@@ -20,7 +21,7 @@ export default function MobileNav({ activeSection }) {
   return (
     <>
       <nav className="mobile-nav">
-        <span className="mobile-nav__brand">Md. Kamrul Hasan</span>
+        <span className="mobile-nav__brand">{personalInfo.name}</span>
         <button
           className={`mobile-nav__hamburger ${open ? 'open' : ''}`}
           onClick={() => setOpen((v) => !v)}

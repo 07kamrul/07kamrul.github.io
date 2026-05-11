@@ -1,45 +1,45 @@
 export const personalInfo = {
-  name: "Md. Kamrul Hasan",
-  title: "Software Engineer",
+  name: "Kamrul Hasan",
+  title: "Programmer",
   titles: [
     "Software Engineer",
-    "Full-Stack Developer",
-    "Flutter Developer",
-    ".NET Core Specialist",
-    "Java Spring Boot Dev",
+    "Back End Developer",
+    "Full Stack Developer",
+    "Mobile Developer",
+    "DevOps Engineer",
   ],
   email: "mdkamrulhasanewu@gmail.com",
   phone: "(+880) 1758290421",
   whatsapp: "+8801758290421",
-  location: "Mirpur, 1216, Dhaka, Bangladesh",
+  location: "Bangladesh",
   nationality: "Bangladeshi",
   github: "https://github.com/07kamrul",
   linkedin: "https://www.linkedin.com/in/07kamrul/",
   about:
-    "Experienced software engineer with over 6 years of expertise in C#, .NET Core, MVC, Angular, and Flutter. Specialized in developing web applications, microservices, and solutions for Micro Credit, ERP, and GIS. Skilled in GIT for version control, with a passion for creating impactful software and driving technological advancements.",
+    "Experienced software engineer specializing in C#, .NET, microservices, Angular, and Flutter. Over six years building web and mobile applications using C#, .NET Core, .NET 8, Java, Spring Boot, Angular, and Flutter for microfinance, ERP, GIS, and FinTech domains, with a focus on scalable microservices, API development, performance, and user engagement.",
   stats: [
     { label: "Years Experience", value: 6, suffix: "+" },
-    { label: "Companies", value: 4, suffix: "" },
-    { label: "Projects Delivered", value: 8, suffix: "+" },
-    { label: "Technologies", value: 15, suffix: "+" },
+    { label: "Companies", value: 3, suffix: "" },
+    { label: "Domains", value: 4, suffix: "" },
+    { label: "Technologies", value: 20, suffix: "+" },
   ],
 };
 
 export const skills = [
-  { category: "Backend", items: ["C# / .NET Core", "Java / Spring Boot", "Python / Frappe", "RESTful APIs", "Microservices"] },
-  { category: "Frontend", items: ["Angular", "JavaScript", "MVC", "Bootstrap", "HTML/CSS"] },
+  { category: "Backend", items: ["C#", ".NET", ".NET Core", ".NET 8+", "ASP.NET", "ASP.NET MVC", "Java", "Spring Boot", "RESTful APIs", "Microservices"] },
+  { category: "Frontend", items: ["Angular", "AngularJS", "JavaScript", "MVC"] },
   { category: "Mobile", items: ["Flutter", "Dart"] },
-  { category: "Database", items: ["MSSQL", "MySQL", "PostgreSQL"] },
-  { category: "DevOps & Tools", items: ["Git", "Linux (Red Hat, Debian)", "Grafana", "Agile / Scrum", "RFID Integration"] },
+  { category: "Database", items: ["SQL", "MSSQL", "SQL Server", "PostgreSQL", "MySQL"] },
+  { category: "Tools & Platforms", items: ["Git", "Linux", "Debian", "Grafana", "Frappe", "ERPNext", "Laravel", "GIS", "RADIUS"] },
 ];
 
 export const topSkills = [
-  { name: "C# / .NET Core", level: 90 },
-  { name: "Java / Spring Boot", level: 80 },
-  { name: "Flutter / Dart", level: 85 },
-  { name: "Angular / JS", level: 78 },
-  { name: "SQL / Databases", level: 82 },
-  { name: "RESTful APIs", level: 88 },
+  { name: "C# / .NET", level: 90 },
+  { name: ".NET Core / .NET 8+", level: 88 },
+  { name: "Java / Spring Boot", level: 84 },
+  { name: "Flutter / Dart", level: 86 },
+  { name: "Angular / AngularJS", level: 82 },
+  { name: "SQL / Databases", level: 84 },
 ];
 
 export const experiences = [
@@ -48,25 +48,25 @@ export const experiences = [
     company: "ASA Bangladesh",
     location: "Dhaka, Bangladesh",
     role: "Software Engineer",
-    period: "Oct 2021 – Jan 2024",
+    period: "Oct 2021 - Present",
     type: "past",
-    sector: "Financial & Insurance",
+    sector: "Microfinance",
     website: "https://asa.org.bd/",
     description:
-      "Leveraged expertise in C#, .NET 8, MVC, AngularJS, and SQL Server to develop scalable web and mobile applications, with a focus on microfinance solutions that enhance transaction integrity, streamline processes, and drive user adoption.",
-    tags: ["C#", ".NET 8", "AngularJS", "SQL Server", "MVC", "Microservices"],
+      "Built scalable microfinance web applications using C#, .NET Core, MVC, and AngularJS, improving transaction integrity and API performance while driving user adoption.",
+    tags: ["C++", ".NET Core", "MVC", "AngularJS", "SQL Server", "Microservices"],
   },
   {
     id: 2,
     company: "CTrends Software & Services Ltd.",
     location: "Dhaka, Bangladesh",
     role: "Java Programmer",
-    period: "May 2021 – Sep 2021",
+    period: "Jan 2021 - Sep 2021",
     type: "past",
     sector: "Information & Communication",
     website: "https://www.ctrends-software.com/",
     description:
-      "Applied skills in object-oriented design, Spring Boot, RESTful APIs, and Flutter to build scalable, user-centric web and mobile applications—delivering impactful solutions like citizen issue reporting with KYC and GIS tracking.",
+      "Developed Spring Boot RESTful services and Flutter front-ends for citizen issue-reporting and KYC/GIS features, delivering scalable solutions with high adoption and resolution efficiency.",
     tags: ["Java", "Spring Boot", "Flutter", "RESTful APIs", "GIS", "KYC"],
   },
   {
@@ -74,13 +74,13 @@ export const experiences = [
     company: "Naztech Inc.",
     location: "Dhaka, Bangladesh",
     role: "Junior Software Developer",
-    period: "Feb 2019 – Dec 2020",
+    period: "Feb 2019 - Dec 2020",
     type: "past",
     sector: "FinTech",
     website: "https://naztech.io/",
     description:
-      "Led Agile software development projects using Spring Boot, Hibernate, and Python Frappe, with a focus on database optimization, HR module analysis, and system automation through RFID integration, Grafana visualization, and scheduled tasks.",
-    tags: ["Spring Boot", "Python", "Frappe", "Hibernate", "Grafana", "RFID"],
+      "Led development of ERPNext-based HR and Payroll modules and integrated automation features including RFID, scheduled tasks, and Grafana, improving reporting, attendance accuracy, and operational efficiency.",
+    tags: ["Python", "Frappe", "MySQL", "ERPNext", "Linux", "Grafana"],
   },
 ];
 
@@ -101,7 +101,7 @@ const createGenericPrivacyPolicy = (projectName, features) => ({
     {
       title: "Data We Access",
       summary:
-        "Only the information required to run the project’s core flows should be accessed.",
+        "Only the information required to run the project's core flows should be accessed.",
       bullets: [
         "Depending on the feature set, the project may process user input, device state, or feature-specific content needed to complete actions.",
         "Permissions or connected services should only be requested when they directly support visible product functionality.",
@@ -123,7 +123,7 @@ const createGenericPrivacyPolicy = (projectName, features) => ({
       summary:
         "Users should remain in control of preferences, permissions, and removable local data.",
       bullets: [
-        "Where possible, preferences and cached project data should stay on the user’s device or be retained only as long as needed.",
+        "Where possible, preferences and cached project data should stay on the user's device or be retained only as long as needed.",
         "Users should be able to limit permissions from device or app settings, although doing so may reduce available features.",
         "If data-sensitive features expand in the future, the privacy policy should be updated to reflect the new behavior clearly.",
       ],
@@ -131,7 +131,7 @@ const createGenericPrivacyPolicy = (projectName, features) => ({
   ],
 });
 
-const muazzinPrivacyPolicy = {
+const _muazzinPrivacyPolicy = {
   intro:
     "We aim to use the minimum data needed to provide core Islamic utility features, and keep as much as possible on your device.",
   sections: [
@@ -158,7 +158,7 @@ const muazzinPrivacyPolicy = {
     {
       title: "Data We Access",
       summary:
-        "We only access device data that is needed for the app’s core features.",
+        "We only access device data that is needed for the app's core features.",
       bullets: [
         "Location may be accessed to calculate accurate prayer times, show the Qibla direction correctly, and help find nearby mosques.",
         "If you use the mosque-finder route feature, origin and destination coordinates may be processed to generate a shortest path polyline.",
@@ -179,7 +179,7 @@ const muazzinPrivacyPolicy = {
     {
       title: "What Stays On Your Device",
       summary:
-        "A large portion of the app’s operational data is intended to stay local.",
+        "A large portion of the app's operational data is intended to stay local.",
       bullets: [
         "Prayer-time cache, user preferences, notification choices, pinned mosque selection, and display settings are stored locally on your device.",
         "The app is designed so that core preferences do not require a user account.",
@@ -213,169 +213,92 @@ const muazzinPrivacyPolicy = {
 export const projects = [
   {
     id: 1,
-    title: "GPS Tracking Application",
-    company: "Self",
-    period: "Dec 2024 – Present",
+    title: "Learning Platform Re-Engagement",
+    company: "Professional Project",
+    period: "2024",
     description:
-      "Built a location-based messaging app using Flutter, Laravel (backend), and GIS with OSM maps. The app connects users within a 10-meter radius, offering real-time chat, live location updates, and an interactive map to boost proximity-based engagement.",
-    tags: ["Flutter", "Laravel", "GIS", "OSM Maps", "Real-time Chat"],
-    gradient: "from-cyan-500 to-blue-600",
-    icon: "🗺️",
+      "Improved a learning platform's user re-engagement by 30% through web/mobile enhancements focused on maintainability, performance, and user activity.",
+    tags: ["C#", ".NET", "Flutter", "JavaScript", "MSSQL", "User Engagement"],
+    gradient: "from-orange-500 to-red-600",
+    icon: "LMS",
     privacyPolicy: createGenericPrivacyPolicy(
-      "GPS Tracking Application",
-      "real-time location sharing, nearby messaging, interactive maps, and GIS-based engagement"
+      "Learning Platform Re-Engagement",
+      "learning workflows, user activity, performance improvement, and re-engagement features"
     ),
   },
   {
     id: 2,
-    title: "Server Abnormality Alert App",
-    company: "Self",
-    period: "Sep 2024 – Nov 2024",
+    title: "System Reliability Alerting Tools",
+    company: "Professional Project",
+    period: "2024",
     description:
-      "Developed a Flutter app that polls server health every 5 minutes via API, triggering loud alerts with a tap-to-silence feature. This improved response times and system reliability by minimizing downtime.",
-    tags: ["Flutter", "REST API", "Push Notifications", "Monitoring"],
+      "Built alerting tools to improve system reliability and response visibility, helping reduce downtime risk and support faster operational action.",
+    tags: ["Flutter", "RESTful APIs", "Monitoring", "Alerts", "System Reliability"],
     gradient: "from-purple-500 to-pink-600",
-    icon: "🔔",
+    icon: "ALRT",
     privacyPolicy: createGenericPrivacyPolicy(
-      "Server Abnormality Alert App",
-      "server health monitoring, alert delivery, and response-time visibility"
+      "System Reliability Alerting Tools",
+      "system monitoring, alert delivery, response visibility, and reliability workflows"
     ),
   },
   {
     id: 3,
-    title: "MEIKO — Japanese Learning Platform",
-    company: "Self",
-    period: "Apr 2024 – Aug 2024",
+    title: "Transactionally Robust Microfinance Modules",
+    company: "ASA Bangladesh",
+    period: "Oct 2021 - Jan 2024",
     description:
-      "Enhanced the MEIKO platform using C# ASP.NET, JavaScript, MSSQL, and Flutter. Implemented scheduled push notifications (1–4 weeks post-login) with dynamic local rescheduling. Boosted user re-engagement by 30%.",
-    tags: ["C# ASP.NET", "Flutter", "MSSQL", "Push Notifications"],
-    gradient: "from-orange-500 to-red-600",
-    icon: "🎌",
+      "Delivered scalable microfinance modules using C#, .NET Core, MVC, AngularJS, and SQL Server, improving transaction integrity, API performance, and user adoption.",
+    tags: ["C#", ".NET Core", "MVC", "AngularJS", "SQL Server", "Microservices"],
+    gradient: "from-blue-500 to-indigo-600",
+    icon: "FIN",
     privacyPolicy: createGenericPrivacyPolicy(
-      "MEIKO — Japanese Learning Platform",
-      "learning workflows, scheduled reminders, and progress re-engagement features"
+      "Transactionally Robust Microfinance Modules",
+      "microfinance workflows, transaction processing, API performance, and internal business operations"
     ),
   },
   {
     id: 4,
-    title: "MakeShop — Batch Email Automation",
-    company: "Self",
-    period: "Feb 2024 – Apr 2024",
+    title: "Citizen Issue Reporting Platform",
+    company: "CTrends Software & Services Ltd.",
+    period: "Jan 2021 - Sep 2021",
     description:
-      "Developed a Java-based batch process for Medipal Holdings to automate email alerts and clean outdated images, improving efficiency, reducing storage, and enhancing performance with robust error handling and logging.",
-    tags: ["Java", "Spring Boot", "Batch Processing", "Email Automation"],
-    gradient: "from-green-500 to-teal-600",
-    icon: "🛒",
+      "Developed Spring Boot RESTful APIs and Flutter interfaces for citizen issue reporting, KYC, and GIS tracking, delivering scalable tools with high adoption and resolution efficiency.",
+    tags: ["Java", "Spring Boot", "Flutter", "RESTful APIs", "GIS", "KYC"],
+    gradient: "from-red-500 to-rose-600",
+    icon: "GIS",
     privacyPolicy: createGenericPrivacyPolicy(
-      "MakeShop — Batch Email Automation",
-      "batch processing, automated notifications, and operational content maintenance"
+      "Citizen Issue Reporting Platform",
+      "citizen issue reporting, identity checks, GIS tracking, and resolution workflows"
     ),
   },
   {
     id: 5,
-    title: "ASA Microfinance Management System",
-    company: "ASA Bangladesh",
-    period: "May 2022 – May 2024",
-    description:
-      "Built a microfinance module to streamline secure financial transactions using C#, MVC, .NET Core, MSSQL, and AngularJS. Delivered reliable, efficient solution with .NET 6 transaction scope and optimized APIs.",
-    tags: ["C#", ".NET Core", "AngularJS", "MSSQL", "Microservices"],
-    gradient: "from-blue-500 to-indigo-600",
-    icon: "💰",
-    privacyPolicy: createGenericPrivacyPolicy(
-      "ASA Microfinance Management System",
-      "financial workflow management, transaction processing, and internal business operations"
-    ),
-  },
-  {
-    id: 6,
-    title: "Motor Loan Management System",
-    company: "ASA Bangladesh",
-    period: "Oct 2021 – May 2022",
-    description:
-      "Built a motorcycle loan system for efficient employee loan processing and automated salary deductions, integrated with PMIS. Used C#, .NET 5, MVC, MSSQL, Angular, with microservices and RESTful APIs.",
-    tags: ["C#", ".NET 5", "Angular", "MSSQL", "PMIS Integration"],
-    gradient: "from-yellow-500 to-orange-600",
-    icon: "🏍️",
-    privacyPolicy: createGenericPrivacyPolicy(
-      "Motor Loan Management System",
-      "loan processing, payroll-linked deductions, and employee finance administration"
-    ),
-  },
-  {
-    id: 7,
-    title: "THE CITIZEN — Issue Reporting App",
-    company: "CTrends Software",
-    period: "Jan 2021 – Sep 2021",
-    description:
-      "Built a citizen issue-reporting app with image uploads, KYC, and GIS tracking using Java, Spring Boot, PostgreSQL, and Flutter. Delivered a scalable, user-friendly solution with high adoption and resolution efficiency.",
-    tags: ["Java", "Spring Boot", "Flutter", "PostgreSQL", "GIS", "KYC"],
-    gradient: "from-red-500 to-rose-600",
-    icon: "🏙️",
-    privacyPolicy: createGenericPrivacyPolicy(
-      "THE CITIZEN — Issue Reporting App",
-      "citizen issue reporting, media uploads, identity checks, and GIS-based case tracking"
-    ),
-  },
-  {
-    id: 8,
-    title: "ERPNext HR & Payroll Solution",
+    title: "ERPNext HR & Payroll Automation",
     company: "Naztech Inc.",
-    period: "Feb 2019 – Dec 2020",
+    period: "Feb 2019 - Dec 2020",
     description:
-      "Built an HR & Payroll system to automate employee management, attendance, leave, payroll, and reporting using Python, Frappe, MySQL, Bootstrap 3, and Jinja2.",
-    tags: ["Python", "Frappe", "MySQL", "Bootstrap", "Jinja2"],
+      "Built ERPNext HR and Payroll modules with Python, Frappe, MySQL, Linux, RFID automation, scheduled tasks, and Grafana reporting to improve attendance accuracy and operational efficiency.",
+    tags: ["Python", "Frappe", "MySQL", "ERPNext", "Linux", "Grafana"],
     gradient: "from-teal-500 to-cyan-600",
-    icon: "👥",
+    icon: "ERP",
     privacyPolicy: createGenericPrivacyPolicy(
-      "ERPNext HR & Payroll Solution",
-      "HR operations, payroll workflows, attendance management, and employee reporting"
+      "ERPNext HR & Payroll Automation",
+      "HR operations, payroll workflows, attendance management, automation, and reporting"
     ),
-  },
-  {
-    id: 9,
-    title: "Muazzin — Qibla, Salah, Quran",
-    company: "Self",
-    period: "2025 – Present",
-    description:
-      "Designed a Bangladesh-focused Islamic utility app that combines IFB-aligned prayer times, Qibla direction, nearest mosque discovery, crowd-sourced Jamat schedules, Azan notifications, Ramadan tools, and offline-first support in a single Bangla-first mobile experience.",
-    tags: ["Flutter", "PWA", "PostGIS", "OpenStreetMap", "Adhan", "Offline-first"],
-    gradient: "from-emerald-500 to-teal-700",
-    icon: "🕌",
-    privacyPolicy: muazzinPrivacyPolicy,
   },
 ];
 
 export const education = [
   {
     id: 1,
-    degree: "Bachelor of Science",
-    field: "Computer Science & Engineering",
+    degree: "Bachelor's Degree",
+    field: "Computer Science",
     institution: "East West University",
-    location: "Dhaka, Bangladesh",
-    period: "May 2014 – Dec 2018",
-    grade: "2.64 / 4.0 (78%)",
+    location: "Bangladesh",
+    period: "2014 - 2018",
+    grade: "2.64 / 4.0",
     credits: 141,
-    thesis: "A Mutual Information Based Wrapper Method for Software Defect Prediction",
     website: "https://www.ewubd.edu/",
-    icon: "🎓",
-  },
-  {
-    id: 2,
-    degree: "Top-Up IT Training",
-    field: "Web Application Dot Net",
-    institution: "NASSCOM IT-ITES Sector Skill Council (SSC)",
-    location: "Dhaka, Bangladesh",
-    period: "Mar 2019 – Sep 2019",
-    icon: "💻",
-  },
-  {
-    id: 3,
-    degree: "Japanese Language Training Program",
-    field: "Japanese Language",
-    institution: "Human Academy - Japanese Language School",
-    location: "Japan",
-    period: "Feb 2024 – Aug 2024",
-    website: "https://hajl.athuman.com/",
-    icon: "🇯🇵",
+    icon: "EDU",
   },
 ];

@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiGithub, FiLinkedin, FiMail, FiChevronDown } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiChevronDown, FiMapPin } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
 import './Hero.css';
 
@@ -41,6 +41,8 @@ const useTypewriter = (words, speed = 80, pause = 1800) => {
 export default function Hero() {
   const typed = useTypewriter(personalInfo.titles);
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  const [firstName, ...restName] = personalInfo.name.split(' ');
+  const lastName = restName.join(' ');
 
   return (
     <div className="hero">
@@ -58,7 +60,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="greeting-wave">👋</span> Hello, I'm
+            <span className="greeting-wave">Hi</span> Hello, I'm
           </motion.div>
 
           <motion.h1
@@ -67,8 +69,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
           >
-            Md. Kamrul
-            <span className="gradient-text"> Hasan</span>
+            {firstName}
+            <span className="gradient-text"> {lastName}</span>
           </motion.h1>
 
           <motion.div
@@ -120,7 +122,7 @@ export default function Hero() {
               <FiMail />
             </a>
             <div className="social-divider" />
-            <span className="social-location">📍 {personalInfo.location}</span>
+            <span className="social-location"><FiMapPin /> {personalInfo.location}</span>
           </motion.div>
         </motion.div>
 
@@ -136,7 +138,7 @@ export default function Hero() {
           <div className="hero__photo-container">
             <img
               src={profileImage}
-              alt="Md. Kamrul Hasan"
+              alt={personalInfo.name}
               className="hero__photo"
               onError={(e) => { e.target.style.display = 'none'; e.target.nextSibling.style.display = 'flex'; }}
             />
@@ -156,7 +158,7 @@ export default function Hero() {
             animate={{ y: [0, 8, 0] }}
             transition={{ repeat: Infinity, duration: 3.5, ease: 'easeInOut' }}
           >
-            🚀 Open to Work
+            Open to Work
           </motion.div>
         </motion.div>
       </div>

@@ -14,12 +14,15 @@ const navLinks = [
 const profileImage = `${import.meta.env.BASE_URL}profile.jpg`;
 
 export default function Sidebar({ activeSection }) {
+  const [firstName, ...restName] = personalInfo.name.split(' ');
+  const lastName = restName.join(' ');
+
   return (
     <aside className="sidebar">
       {/* Profile photo */}
       <img
         src={profileImage}
-        alt="Md. Kamrul Hasan"
+        alt={personalInfo.name}
         className="sidebar__photo"
         onError={(e) => {
           e.target.style.display = 'none';
@@ -30,7 +33,7 @@ export default function Sidebar({ activeSection }) {
 
       {/* Name */}
       <div className="sidebar__name">
-        <span>Md. Kamrul </span>Hasan
+        <span>{firstName} </span>{lastName}
       </div>
       <div className="sidebar__title">{personalInfo.title}</div>
 
