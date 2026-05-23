@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Era International | Travel Agency</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky: #38bdf8;
+      --ocean: #0369a1;
+      --deep: #0f3157;
+      --sunset: #ff7a1a;
+      --gold: #ffb703;
+      --soft: #f3fbff;
+      --ink: #172033;
+      --muted: #667085;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(15, 49, 87, 0.13);
+      --radius: 22px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 86px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .section-padding {
+      padding: 96px 0;
+    }
+
+    .section-kicker {
+      color: var(--sunset);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 0.78rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-weight: 800;
+      color: var(--deep);
+      margin-bottom: 14px;
+      line-height: 1.16;
+    }
+
+    .section-text {
+      color: var(--muted);
+      max-width: 690px;
+      margin: 0 auto;
+      line-height: 1.75;
+    }
+
+    .navbar {
+      padding: 14px 0;
+      background: rgba(255, 255, 255, 0.91);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 8px 30px rgba(15, 49, 87, 0.08);
+    }
+
+    .navbar-brand {
+      font-weight: 800;
+      color: var(--deep);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--sky), var(--sunset));
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.35);
+    }
+
+    .nav-link {
+      color: #344054;
+      font-weight: 600;
+      margin: 0 4px;
+      border-radius: 999px;
+      padding: 9px 14px !important;
+      transition: all 0.25s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--ocean);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(8, 35, 62, 0.82), rgba(3, 105, 161, 0.46), rgba(255, 122, 26, 0.22)),
+        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=85") center/cover no-repeat;
+      isolation: isolate;
+      padding: 130px 0 70px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 170px;
+      background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+      z-index: -1;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.55rem, 6vw, 5.8rem);
+      font-weight: 800;
+      line-height: 1.02;
+      max-width: 900px;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      max-width: 650px;
+      color: rgba(255, 255, 255, 0.9);
+      line-height: 1.75;
+      margin-bottom: 34px;
+    }
+
+    .btn-travel {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 24px;
+      font-weight: 800;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .btn-primary-travel {
+      color: white;
+      background: linear-gradient(135deg, var(--sunset), var(--gold));
+      box-shadow: 0 16px 28px rgba(255, 122, 26, 0.3);
+    }
+
+    .btn-primary-travel:hover {
+      color: white;
+      transform: translateY(-3px);
+      box-shadow: 0 20px 38px rgba(255, 122, 26, 0.4);
+    }
+
+    .btn-outline-travel {
+      color: white;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline-travel:hover {
+      color: var(--deep);
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-stat {
+      border-radius: var(--radius);
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-stat strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      color: white;
+    }
+
+    .hero-stat span {
+      color: rgba(255, 255, 255, 0.84);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .about-img {
+      border-radius: 28px;
+      min-height: 500px;
+      object-fit: cover;
+      box-shadow: var(--shadow);
+    }
+
+    .floating-card {
+      position: absolute;
+      right: 8%;
+      bottom: 7%;
+      width: min(290px, 82%);
+      padding: 22px;
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: var(--soft);
+      color: var(--deep);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .feature-pill i {
+      color: var(--sunset);
+      font-size: 1.25rem;
+    }
+
+    .soft-bg {
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 34%),
+        linear-gradient(180deg, #f7fcff, #ffffff);
+    }
+
+    .service-card,
+    .destination-card,
+    .package-card,
+    .why-card,
+    .testimonial-card,
+    .contact-card {
+      border: 0;
+      border-radius: var(--radius);
+      background: white;
+      box-shadow: 0 12px 34px rgba(15, 49, 87, 0.09);
+      transition: all 0.25s ease;
+      height: 100%;
+    }
+
+    .service-card:hover,
+    .destination-card:hover,
+    .package-card:hover,
+    .why-card:hover,
+    .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow);
+    }
+
+    .icon-box {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.65rem;
+      background: linear-gradient(135deg, var(--sky), var(--ocean));
+      box-shadow: 0 14px 24px rgba(56, 189, 248, 0.28);
+      margin-bottom: 22px;
+    }
+
+    .service-card h5,
+    .why-card h5 {
+      color: var(--deep);
+      font-weight: 800;
+    }
+
+    .service-card p,
+    .why-card p,
+    .testimonial-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    .destination-card {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .destination-card img {
+      height: 310px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .destination-card:hover img {
+      transform: scale(1.08);
+    }
+
+    .destination-overlay {
+      position: absolute;
+      inset: auto 0 0;
+      padding: 24px;
+      color: white;
+      background: linear-gradient(to top, rgba(8, 35, 62, 0.9), transparent);
+    }
+
+    .destination-overlay h4 {
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .package-card {
+      overflow: hidden;
+    }
+
+    .package-card img {
+      height: 240px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .package-price {
+      color: var(--sunset);
+      font-size: 1.65rem;
+      font-weight: 800;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.92rem;
+      margin: 14px 0 18px;
+    }
+
+    .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .why-section {
+      color: white;
+      background:
+        linear-gradient(120deg, rgba(3, 105, 161, 0.94), rgba(15, 49, 87, 0.9)),
+        url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1700&q=85") center/cover fixed;
+    }
+
+    .why-section .section-title,
+    .why-section .section-text {
+      color: white;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .why-card h5,
+    .why-card p {
+      color: white;
+    }
+
+    .why-card .icon-box {
+      background: linear-gradient(135deg, var(--sunset), var(--gold));
+    }
+
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 12px 28px rgba(15, 49, 87, 0.1);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    .gallery-item::after {
+      content: "\F52A";
+      font-family: "bootstrap-icons";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      background: rgba(3, 105, 161, 0.45);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item:hover::after {
+      opacity: 1;
+    }
+
+    .avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .stars {
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .contact-section {
+      background:
+        radial-gradient(circle at bottom right, rgba(255, 122, 26, 0.14), transparent 32%),
+        linear-gradient(180deg, #fff, #f4fbff);
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 15px;
+      border: 1px solid #d8e6ef;
+      padding: 13px 15px;
+      box-shadow: none !important;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: var(--sky);
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .contact-info i {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: linear-gradient(135deg, var(--sky), var(--ocean));
+      flex: 0 0 auto;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      background: var(--deep);
+      margin-right: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .social-links a:hover {
+      background: var(--sunset);
+      transform: translateY(-4px);
+    }
+
+    footer {
+      color: rgba(255, 255, 255, 0.82);
+      background: #081f38;
+      padding-top: 70px;
+    }
+
+    footer h5,
+    footer h4 {
+      color: white;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    footer ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    footer li {
+      margin-bottom: 11px;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.76);
+      transition: color 0.2s ease;
+    }
+
+    footer a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin-top: 48px;
+      padding: 22px 0;
+    }
+
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 0;
+      color: white;
+      background: linear-gradient(135deg, var(--sunset), var(--gold));
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      box-shadow: 0 12px 26px rgba(255, 122, 26, 0.34);
+    }
+
+    .back-to-top.show {
+      display: inline-flex;
+    }
+
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        padding-top: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 140px 0 80px;
+      }
+
+      .section-padding {
+        padding: 72px 0;
+      }
+
+      .floating-card {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      .about-img {
+        min-height: 360px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      .navbar-brand {
+        font-size: 1rem;
+      }
+
+      .brand-icon {
+        width: 38px;
+        height: 38px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero .btn-travel {
+        width: 100%;
+      }
+
+      .hero-stat {
+        text-align: center;
+      }
+
+      .destination-card img,
+      .gallery-item img {
+        height: 245px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#home">
+        <span class="brand-icon"><i class="bi bi-airplane-engines"></i></span>
+        Trip Era International
+      </a>
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#packages">Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-8">
+          <div class="hero-badge">
+            <i class="bi bi-compass"></i>
+            Your trusted travel partner
+          </div>
+          <h1>Explore The World With Trip Era International</h1>
+          <p>Discover unforgettable holidays, affordable air tickets, smooth visa support, handpicked hotels, and perfectly planned tours for every journey.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3">
+            <a href="#packages" class="btn btn-travel btn-primary-travel">
+              Explore Packages <i class="bi bi-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-travel btn-outline-travel">
+              Contact Us <i class="bi bi-telephone"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="row g-3">
+            <div class="col-6 col-lg-12">
+              <div class="hero-stat">
+                <strong>50+</strong>
+                <span>Destinations</span>
+              </div>
+            </div>
+            <div class="col-6 col-lg-12">
+              <div class="hero-stat">
+                <strong>24/7</strong>
+                <span>Travel Support</span>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="hero-stat">
+                <strong>100%</strong>
+                <span>Personalized tour planning</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 position-relative">
+          <img class="about-img w-100" src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1100&q=85" alt="Travel planning">
+          <div class="floating-card">
+            <h5 class="fw-bold text-primary mb-2">Smart Travel Starts Here</h5>
+            <p class="text-muted mb-0">Flights, visas, hotels, and guided tours in one reliable place.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="section-kicker">About Us</div>
+          <h2 class="section-title display-6">We make every journey easier, safer, and more memorable.</h2>
+          <p class="text-muted lh-lg mb-4">Trip Era International is a modern travel agency focused on trusted service, affordable packages, visa support, air ticketing, hotel booking, and complete tour planning. From family vacations to business trips and spiritual journeys, we help travelers move with confidence.</p>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="feature-pill"><i class="bi bi-shield-check"></i> Trusted Support</div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-pill"><i class="bi bi-cash-coin"></i> Affordable Deals</div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-pill"><i class="bi bi-passport"></i> Visa Assistance</div>
+            </div>
+            <div class="col-sm-6">
+              <div class="feature-pill"><i class="bi bi-calendar2-check"></i> Tour Planning</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding soft-bg" id="services">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker">Our Services</div>
+        <h2 class="section-title display-6">Complete travel solutions</h2>
+        <p class="section-text">Everything you need to plan, book, and enjoy a smooth trip with professional travel guidance.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card card p-4">
+            <div class="icon-box"><i class="bi bi-airplane"></i></div>
+            <h5>Air Ticket Booking</h5>
+            <p>Domestic and international ticket booking with flexible routes and competitive fares.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card card p-4">
+            <div class="icon-box"><i class="bi bi-file-earmark-check"></i></div>
+            <h5>Visa Processing</h5>
+            <p>Reliable visa documentation guidance and processing support for popular destinations.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card card p-4">
+            <div class="icon-box"><i class="bi bi-map"></i></div>
+            <h5>Tour Packages</h5>
+            <p>Curated holiday packages designed for couples, families, groups, and corporate travelers.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card card p-4">
+            <div class="icon-box"><i class="bi bi-building"></i></div>
+            <h5>Hotel Booking</h5>
+            <p>Comfortable hotels and resorts selected for location, value, and guest experience.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card card p-4">
+            <div class="icon-box"><i class="bi bi-moon-stars"></i></div>
+            <h5>Hajj & Umrah Packages</h5>
+            <p>Thoughtfully arranged spiritual travel packages with care and dependable coordination.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="service-card card p-4">
+            <div class="icon-box"><i class="bi bi-heart-pulse"></i></div>
+            <h5>Travel Insurance</h5>
+            <p>Coverage options to help protect your journey against unexpected travel challenges.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="destinations">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker">Popular Destinations</div>
+        <h2 class="section-title display-6">Beautiful places waiting for you</h2>
+        <p class="section-text">Choose from world-famous cities, tropical beaches, cultural landmarks, and unforgettable experiences.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="destination-card">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=85" alt="Dubai">
+            <div class="destination-overlay">
+              <h4>Dubai</h4>
+              <p class="mb-0">Luxury, skyline, desert safari</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="destination-card">
+            <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=900&q=85" alt="Malaysia">
+            <div class="destination-overlay">
+              <h4>Malaysia</h4>
+              <p class="mb-0">Culture, islands, city lights</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="destination-card">
+            <img src="https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=900&q=85" alt="Thailand">
+            <div class="destination-overlay">
+              <h4>Thailand</h4>
+              <p class="mb-0">Beaches, temples, nightlife</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="destination-card">
+            <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=900&q=85" alt="Singapore">
+            <div class="destination-overlay">
+              <h4>Singapore</h4>
+              <p class="mb-0">Modern city, gardens, shopping</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="destination-card">
+            <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=900&q=85" alt="Turkey">
+            <div class="destination-overlay">
+              <h4>Turkey</h4>
+              <p class="mb-0">History, balloons, Bosphorus</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="destination-card">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=900&q=85" alt="Maldives">
+            <div class="destination-overlay">
+              <h4>Maldives</h4>
+              <p class="mb-0">Blue lagoons, villas, romance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding soft-bg" id="packages">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker">Travel Packages</div>
+        <h2 class="section-title display-6">Handpicked trips for every traveler</h2>
+        <p class="section-text">Explore our popular packages or contact us for a custom itinerary built around your budget and schedule.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card card">
+            <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=900&q=85" alt="Dubai package">
+            <div class="card-body p-4">
+              <div class="package-price">$699</div>
+              <h5 class="fw-bold text-primary-emphasis mt-2">Dubai City Escape</h5>
+              <div class="meta">
+                <span><i class="bi bi-clock"></i> 4 Days</span>
+                <span><i class="bi bi-geo-alt"></i> Dubai</span>
+              </div>
+              <a href="#contact" class="btn btn-travel btn-primary-travel w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card card">
+            <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=85" alt="Bali package">
+            <div class="card-body p-4">
+              <div class="package-price">$849</div>
+              <h5 class="fw-bold text-primary-emphasis mt-2">Island Honeymoon</h5>
+              <div class="meta">
+                <span><i class="bi bi-clock"></i> 5 Days</span>
+                <span><i class="bi bi-geo-alt"></i> Bali</span>
+              </div>
+              <a href="#contact" class="btn btn-travel btn-primary-travel w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card card">
+            <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=900&q=85" alt="Thailand package">
+            <div class="card-body p-4">
+              <div class="package-price">$599</div>
+              <h5 class="fw-bold text-primary-emphasis mt-2">Thailand Adventure</h5>
+              <div class="meta">
+                <span><i class="bi bi-clock"></i> 6 Days</span>
+                <span><i class="bi bi-geo-alt"></i> Bangkok & Phuket</span>
+              </div>
+              <a href="#contact" class="btn btn-travel btn-primary-travel w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card card">
+            <img src="https://images.unsplash.com/photo-1590073242678-70ee3fc28e8e?auto=format&fit=crop&w=900&q=85" alt="Singapore package">
+            <div class="card-body p-4">
+              <div class="package-price">$749</div>
+              <h5 class="fw-bold text-primary-emphasis mt-2">Singapore Family Tour</h5>
+              <div class="meta">
+                <span><i class="bi bi-clock"></i> 4 Days</span>
+                <span><i class="bi bi-geo-alt"></i> Singapore</span>
+              </div>
+              <a href="#contact" class="btn btn-travel btn-primary-travel w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card card">
+            <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=85" alt="Turkey package">
+            <div class="card-body p-4">
+              <div class="package-price">$999</div>
+              <h5 class="fw-bold text-primary-emphasis mt-2">Turkey Heritage Trip</h5>
+              <div class="meta">
+                <span><i class="bi bi-clock"></i> 7 Days</span>
+                <span><i class="bi bi-geo-alt"></i> Istanbul & Cappadocia</span>
+              </div>
+              <a href="#contact" class="btn btn-travel btn-primary-travel w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="package-card card">
+            <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=900&q=85" alt="Maldives package">
+            <div class="card-body p-4">
+              <div class="package-price">$1,199</div>
+              <h5 class="fw-bold text-primary-emphasis mt-2">Maldives Beach Retreat</h5>
+              <div class="meta">
+                <span><i class="bi bi-clock"></i> 5 Days</span>
+                <span><i class="bi bi-geo-alt"></i> Maldives</span>
+              </div>
+              <a href="#contact" class="btn btn-travel btn-primary-travel w-100">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding why-section">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker text-warning">Why Choose Us</div>
+        <h2 class="section-title display-6">Travel with confidence</h2>
+        <p class="section-text">We keep your travel planning simple, transparent, and stress-free from the first call to the final destination.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg">
+          <div class="why-card card p-4 text-center">
+            <div class="icon-box mx-auto"><i class="bi bi-hand-thumbs-up"></i></div>
+            <h5>User-Friendly Service</h5>
+            <p>Easy communication and clear guidance.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="why-card card p-4 text-center">
+            <div class="icon-box mx-auto"><i class="bi bi-person-check"></i></div>
+            <h5>Professional Team</h5>
+            <p>Experienced travel consultants.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="why-card card p-4 text-center">
+            <div class="icon-box mx-auto"><i class="bi bi-tags"></i></div>
+            <h5>Affordable Pricing</h5>
+            <p>Smart packages for every budget.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="why-card card p-4 text-center">
+            <div class="icon-box mx-auto"><i class="bi bi-headset"></i></div>
+            <h5>24/7 Support</h5>
+            <p>Assistance whenever you need it.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg">
+          <div class="why-card card p-4 text-center">
+            <div class="icon-box mx-auto"><i class="bi bi-compass"></i></div>
+            <h5>Trusted Guidance</h5>
+            <p>Reliable advice for better decisions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding" id="gallery">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker">Gallery</div>
+        <h2 class="section-title display-6">Moments that inspire travel</h2>
+        <p class="section-text">A glimpse of beaches, cities, culture, adventure, and unforgettable experiences around the world.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?auto=format&fit=crop&w=900&q=85" alt="Beach travel"></div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=85" alt="Mountain travel"></div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1493707553966-283afac8c358?auto=format&fit=crop&w=900&q=85" alt="City travel"></div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=900&q=85" alt="Island travel"></div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=85" alt="Road trip"></div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="gallery-item"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=900&q=85" alt="Adventure travel"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding soft-bg" id="testimonials">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker">Testimonials</div>
+        <h2 class="section-title display-6">Happy travelers, real experiences</h2>
+        <p class="section-text">Our clients trust us for smooth planning, friendly support, and memorable journeys.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card card p-4">
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p>"Trip Era International arranged our Dubai tour perfectly. The hotel, tickets, and schedule were all excellent."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&q=85" alt="Client">
+              <div>
+                <h6 class="fw-bold mb-0">Nusrat Jahan</h6>
+                <small class="text-muted">Dubai Traveler</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card card p-4">
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+            <p>"Very professional service. They helped with visa processing and gave clear updates from start to finish."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img class="avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&q=85" alt="Client">
+              <div>
+                <h6 class="fw-bold mb-0">Rafiqul Islam</h6>
+                <small class="text-muted">Malaysia Traveler</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="testimonial-card card p-4">
+            <div class="stars"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i></div>
+            <p>"Our family Thailand trip was affordable and beautifully planned. Their support made everything easy."</p>
+            <div class="d-flex align-items-center gap-3 mt-4">
+              <img class="avatar" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=160&q=85" alt="Client">
+              <div>
+                <h6 class="fw-bold mb-0">Samia Rahman</h6>
+                <small class="text-muted">Family Tour Client</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding contact-section" id="contact">
+    <div class="container">
+      <div class="text-center mb-5">
+        <div class="section-kicker">Contact Us</div>
+        <h2 class="section-title display-6">Plan your next journey today</h2>
+        <p class="section-text">Send your travel request and our team will help you choose the best route, package, and budget.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="contact-card card p-4 p-lg-5">
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Name</label>
+                  <input type="text" class="form-control" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Email</label>
+                  <input type="email" class="form-control" placeholder="Your email" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Phone</label>
+                  <input type="tel" class="form-control" placeholder="Your phone" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-semibold">Destination</label>
+                  <select class="form-select" required>
+                    <option value="">Choose destination</option>
+                    <option>Dubai</option>
+                    <option>Malaysia</option>
+                    <option>Thailand</option>
+                    <option>Singapore</option>
+                    <option>Turkey</option>
+                    <option>Maldives</option>
+                    <option>Custom Trip</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-semibold">Message</label>
+                  <textarea class="form-control" rows="5" placeholder="Tell us about your travel plan" required></textarea>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-travel btn-primary-travel w-100" type="submit">
+                    Send Message <i class="bi bi-send"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="contact-card card p-4 p-lg-5">
+            <h4 class="fw-bold text-primary-emphasis mb-4">Get in touch</h4>
+            <div class="contact-info">
+              <i class="bi bi-geo-alt"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Address</h6>
+                <p class="text-muted mb-0">Dhaka, Bangladesh</p>
+              </div>
+            </div>
+            <div class="contact-info">
+              <i class="bi bi-telephone"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Phone</h6>
+                <p class="text-muted mb-0">+880 1700-000000</p>
+              </div>
+            </div>
+            <div class="contact-info">
+              <i class="bi bi-envelope"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Email</h6>
+                <p class="text-muted mb-0">info@triperainternational.com</p>
+              </div>
+            </div>
+            <div class="contact-info">
+              <i class="bi bi-clock"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Office Hours</h6>
+                <p class="text-muted mb-0">Saturday - Thursday, 10:00 AM - 8:00 PM</p>
+              </div>
+            </div>
+            <div class="social-links mt-4">
+              <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <h4>Trip Era International</h4>
+          <p class="lh-lg">A trusted travel agency for air ticketing, visa processing, hotel booking, holiday packages, Hajj & Umrah, and complete tour planning.</p>
+          <div class="social-links mt-3">
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-2">
+          <h5>Quick Links</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#packages">Packages</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="#services">Air Ticket Booking</a></li>
+            <li><a href="#services">Visa Processing</a></li>
+            <li><a href="#services">Tour Packages</a></li>
+            <li><a href="#services">Hotel Booking</a></li>
+            <li><a href="#services">Travel Insurance</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Contact Info</h5>
+          <ul>
+            <li><i class="bi bi-geo-alt me-2 text-warning"></i> Dhaka, Bangladesh</li>
+            <li><i class="bi bi-telephone me-2 text-warning"></i> +880 1700-000000</li>
+            <li><i class="bi bi-envelope me-2 text-warning"></i> info@triperainternational.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom text-center">
+        <p class="mb-0">&copy; <span id="year"></span> Trip Era International. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    const backToTop = document.getElementById("backToTop");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.forEach(item => item.classList.remove("active"));
+        link.classList.add("active");
+
+        if (navbarCollapse.classList.contains("show")) {
+          bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+        }
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      backToTop.classList.toggle("show", window.scrollY > 500);
+
+      const sections = document.querySelectorAll("section[id], header[id]");
+      let current = "home";
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+      });
+    });
+
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", event => {
+      event.preventDefault();
+      alert("Thank you for contacting Trip Era International. We will get back to you soon.");
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>
