@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="About Stock Pulse, a real-time Bangladesh stock market monitoring application."
+    />
+    <title>Stock Pulse | About the Project</title>
+    <style>
+      :root {
+        --bg: #f3f7f5;
+        --surface: #ffffff;
+        --text: #19322b;
+        --muted: #60756f;
+        --line: #dce8e4;
+        --accent: #08784f;
+        --accent-soft: #e5f6ef;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, sans-serif;
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      header {
+        background: linear-gradient(135deg, #073f30, #08784f);
+        color: #ffffff;
+        padding: 72px 24px;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 1040px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        line-height: 1.25;
+        margin-top: 0;
+      }
+
+      h1 {
+        font-size: clamp(38px, 7vw, 62px);
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        color: var(--accent);
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 17px;
+        margin-bottom: 6px;
+      }
+
+      p {
+        color: var(--muted);
+        margin: 0 0 12px;
+      }
+
+      header p {
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 18px;
+        max-width: 720px;
+      }
+
+      main {
+        padding: 34px 24px 48px;
+      }
+
+      section {
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        margin-bottom: 18px;
+        padding: 25px;
+      }
+
+      .grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .card {
+        background: var(--accent-soft);
+        border-radius: 10px;
+        padding: 16px;
+      }
+
+      ul {
+        color: var(--muted);
+        margin: 8px 0 0;
+        padding-left: 20px;
+      }
+
+      .details {
+        display: grid;
+        gap: 9px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .details div {
+        border-bottom: 1px solid var(--line);
+        padding: 8px 0;
+      }
+
+      .details strong {
+        color: var(--accent);
+        display: block;
+        font-size: 13px;
+      }
+
+      footer {
+        color: var(--muted);
+        font-size: 13px;
+        padding: 0 24px 32px;
+        text-align: center;
+      }
+
+      @media (max-width: 760px) {
+        header {
+          padding: 50px 20px;
+        }
+
+        main {
+          padding: 22px 16px 36px;
+        }
+
+        section {
+          padding: 20px;
+        }
+
+        .grid,
+        .details {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>Stock Pulse</h1>
+        <p>
+          A real-time Bangladesh stock market monitoring application for investors,
+          traders, analysts, researchers, and market enthusiasts.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2>About the Project</h2>
+        <p>
+          Stock Pulse is designed to provide a fast, clean, and accurate way to
+          monitor activities across the Dhaka Stock Exchange (DSE) and Chittagong
+          Stock Exchange (CSE). It brings live market data, share statistics,
+          company information, market movers, events, and useful filters into one
+          modern mobile application.
+        </p>
+        <p>
+          Stock Pulse is a tracking and analysis platform. It is not an investment
+          advisory service and does not support stock trading.
+        </p>
+      </section>
+
+      <section>
+        <h2>Core Features</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Market Dashboard</h3>
+            <p>Live DSE and CSE indexes, trades, volume, value, and market status.</p>
+          </article>
+          <article class="card">
+            <h3>Share Monitoring</h3>
+            <p>Top gainers, losers, active shares, circuit shares, halted shares, and spot shares.</p>
+          </article>
+          <article class="card">
+            <h3>Advanced Filtering</h3>
+            <p>Explore shares by sector, index, category, year end, date range, and sorting options.</p>
+          </article>
+          <article class="card">
+            <h3>Company Details</h3>
+            <p>Price data, financial information, shareholding, historical results, and interactive charts.</p>
+          </article>
+          <article class="card">
+            <h3>Events and News</h3>
+            <p>Track IPOs, AGM, EGM, board meetings, record dates, dividends, and market updates.</p>
+          </article>
+          <article class="card">
+            <h3>Personal Experience</h3>
+            <p>Favorites, notifications, English and Bangla languages, and dark or light themes.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Additional Capabilities</h2>
+        <ul>
+          <li>Global search by trading code or company name</li>
+          <li>Block trade tracking with date selection</li>
+          <li>Index movers with positive and negative influence percentages</li>
+          <li>AI-powered assistant for market and financial term explanations</li>
+          <li>Configurable automatic refresh intervals</li>
+          <li>Offline favorites, pagination, lazy loading, and error recovery</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Technical Information</h2>
+        <div class="details">
+          <div><strong>Platform</strong>Android with future iOS support</div>
+          <div><strong>Framework</strong>Flutter</div>
+          <div><strong>Architecture</strong>Clean Architecture</div>
+          <div><strong>State Management</strong>Bloc / Cubit</div>
+          <div><strong>Local Storage</strong>Hive / SharedPreferences</div>
+          <div><strong>Networking</strong>Dio / HTTP</div>
+          <div><strong>Localization</strong>English and Bangla</div>
+          <div><strong>Package Name</strong>com.anshintech.stockpluse</div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Project Goal</h2>
+        <p>
+          The goal of Stock Pulse is to provide the fastest, cleanest, and most
+          accurate real-time Bangladesh stock market monitoring experience through
+          a modern mobile application.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Stock Pulse is a market monitoring application and does not provide investment advice.
+    </footer>
+  </body>
+</html>
