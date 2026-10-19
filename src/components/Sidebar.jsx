@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FiGithub, FiLinkedin, FiMail, FiPhone } from 'react-icons/fi';
 import { personalInfo } from '../data/portfolioData';
+import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
   { id: 'about',      label: 'About' },
@@ -38,12 +39,13 @@ export default function Sidebar({ activeSection }) {
       <div className="sidebar__title">{personalInfo.title}</div>
 
       {/* Nav */}
-      <nav className="sidebar__nav">
+      <nav className="sidebar__nav" aria-label="Primary">
         {navLinks.map((link) => (
           <Link
             key={link.id}
             to={`/?section=${link.id}`}
             className={activeSection === link.id ? 'active' : ''}
+            aria-current={activeSection === link.id ? 'true' : undefined}
           >
             {link.label}
           </Link>
@@ -52,19 +54,20 @@ export default function Sidebar({ activeSection }) {
 
       {/* Social icons */}
       <div className="sidebar__socials">
-        <a href={personalInfo.github} target="_blank" rel="noreferrer" title="GitHub">
+        <a href={personalInfo.github} target="_blank" rel="noreferrer" title="GitHub" aria-label="GitHub">
           <FiGithub />
         </a>
-        <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" title="LinkedIn">
+        <a href={personalInfo.linkedin} target="_blank" rel="noreferrer" title="LinkedIn" aria-label="LinkedIn">
           <FiLinkedin />
         </a>
-        <a href={`mailto:${personalInfo.email}`} title="Email">
+        <a href={`mailto:${personalInfo.email}`} title="Email" aria-label="Email">
           <FiMail />
         </a>
-        <a href={`tel:${personalInfo.phone}`} title="Phone">
+        <a href={`tel:${personalInfo.phone}`} title="Phone" aria-label="Phone">
           <FiPhone />
         </a>
       </div>
+      <ThemeToggle className="theme-toggle--sidebar" />
     </aside>
   );
 }

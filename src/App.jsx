@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import './index.css';
+import './polish.css';
 import About from './components/About';
 import Experience from './components/Experience';
 import Education from './components/Education';

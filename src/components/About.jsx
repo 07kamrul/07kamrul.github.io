@@ -1,4 +1,5 @@
-import { FiGithub, FiLinkedin, FiMail, FiPhone, FiYoutube, FiTwitter } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiMail, FiPhone, FiSend, FiBriefcase } from 'react-icons/fi';
+import { Link } from 'react-router-dom';
 import { personalInfo } from '../data/portfolioData';
 
 export default function About() {
@@ -12,7 +13,13 @@ export default function About() {
         {firstName}<span> {lastName}</span>
       </div>
 
+      <p className="about-status"><span className="about-status__dot" aria-hidden="true" />Open to new opportunities</p>
+
       <div className="about-subtitle">{personalInfo.title}</div>
+
+      <ul className="about-roles" aria-label="Areas of expertise">
+        {personalInfo.titles.map((t) => <li key={t}>{t}</li>)}
+      </ul>
 
       <div className="about-location">
         {personalInfo.location} &middot;{' '}
@@ -20,6 +27,20 @@ export default function About() {
       </div>
 
       <p className="about-bio">{personalInfo.about}</p>
+
+      <div className="about-cta">
+        <Link to="/?section=contact" className="btn btn--primary"><FiSend /> Get in touch</Link>
+        <Link to="/?section=projects" className="btn btn--ghost"><FiBriefcase /> View projects</Link>
+      </div>
+
+      <dl className="about-stats">
+        {personalInfo.stats.map((st) => (
+          <div key={st.label} className="about-stat">
+            <dd>{st.value}{st.suffix}</dd>
+            <dt>{st.label}</dt>
+          </div>
+        ))}
+      </dl>
 
       {/* Social icon buttons */}
       <div className="about-socials">
@@ -29,6 +50,7 @@ export default function About() {
           rel="noreferrer"
           className="about-social-btn"
           title="GitHub"
+          aria-label="GitHub"
         >
           <FiGithub />
         </a>
@@ -38,6 +60,7 @@ export default function About() {
           rel="noreferrer"
           className="about-social-btn"
           title="LinkedIn"
+          aria-label="LinkedIn"
         >
           <FiLinkedin />
         </a>
@@ -45,6 +68,7 @@ export default function About() {
           href={`mailto:${personalInfo.email}`}
           className="about-social-btn"
           title="Email"
+          aria-label="Email"
         >
           <FiMail />
         </a>
@@ -52,6 +76,7 @@ export default function About() {
           href={`tel:${personalInfo.phone}`}
           className="about-social-btn"
           title="Phone"
+          aria-label="Phone"
         >
           <FiPhone />
         </a>

@@ -43,7 +43,7 @@ export default function Contact() {
               {item.icon}
               <span className="contact-label">{item.label}</span>
               {item.href ? (
-                <a href={item.href} target="_blank" rel="noreferrer">{item.value}</a>
+                <a href={item.href} {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}>{item.value}</a>
               ) : (
                 <span>{item.value}</span>
               )}
@@ -57,23 +57,29 @@ export default function Contact() {
           <form onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group">
-                <label className="form-label">Name</label>
+                <label className="form-label" htmlFor="contact-name">Name</label>
                 <input
                   className="form-input"
                   type="text"
                   placeholder="Your name"
+                  autoComplete="name"
                   required
+                  id="contact-name"
+                  name="name"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
               </div>
               <div className="form-group">
-                <label className="form-label">Email</label>
+                <label className="form-label" htmlFor="contact-email">Email</label>
                 <input
                   className="form-input"
                   type="email"
+                  autoComplete="email"
                   placeholder="your@email.com"
                   required
+                  id="contact-email"
+                  name="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
                 />
@@ -81,29 +87,33 @@ export default function Contact() {
             </div>
 
             <div className="form-group">
-              <label className="form-label">Subject</label>
+              <label className="form-label" htmlFor="contact-subject">Subject</label>
               <input
                 className="form-input"
                 type="text"
                 placeholder="What's it about?"
-                value={form.subject}
+                id="contact-subject"
+                  name="subject"
+                  value={form.subject}
                 onChange={(e) => setForm({ ...form, subject: e.target.value })}
               />
             </div>
 
             <div className="form-group">
-              <label className="form-label">Message</label>
+              <label className="form-label" htmlFor="contact-message">Message</label>
               <textarea
                 className="form-input form-textarea"
                 placeholder="Tell me about your project or opportunity..."
                 required
                 rows={5}
-                value={form.message}
+                id="contact-message"
+                  name="message"
+                  value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
               />
             </div>
 
-            <button type="submit" className="btn-submit">
+            <button type="submit" className="btn-submit" aria-live="polite">
               {sent ? (
                 '✅ Opening email client...'
               ) : (

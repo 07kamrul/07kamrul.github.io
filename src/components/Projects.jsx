@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { FiCalendar, FiCode } from 'react-icons/fi';
+import { FiArrowRight, FiCalendar, FiCode } from 'react-icons/fi';
 import { projects } from '../data/portfolioData';
 
 const monthOrder = {
@@ -88,21 +88,22 @@ export default function Projects() {
                 handleProjectClick(project.id);
               }
             }}
-            title="Click to view full project details"
+            aria-label={`View details for ${project.title}`}
           >
             <div className="project-item__header">
               <div className="project-item__title">
-                {project.icon} {project.title}
+                {project.title}
               </div>
               <div className="project-item__company">{project.company}</div>
             </div>
-            <div className="project-item__period"><FiCalendar /> {project.period}</div>
+            <div className="project-item__period"><FiCalendar aria-hidden="true" /> {project.period}</div>
             <p className="project-item__desc">{project.description}</p>
             <div className="exp-item__tags">
               {project.tags.map((t) => (
                 <span key={t} className="resume-tag">{t}</span>
               ))}
             </div>
+            <span className="project-item__more">View details <FiArrowRight aria-hidden="true" /></span>
           </div>
         ))}
       </div>

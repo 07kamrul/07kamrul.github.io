@@ -131,86 +131,25 @@ const createGenericPrivacyPolicy = (projectName, features) => ({
   ],
 });
 
-const _muazzinPrivacyPolicy = {
-  intro:
-    "We aim to use the minimum data needed to provide core Islamic utility features, and keep as much as possible on your device.",
-  sections: [
-    {
-      title: "What Muazzin Does",
-      summary:
-        "Muazzin is an Islamic utility app focused on prayer support, direction finding, Quran reading, Ramadan reminders, mosque discovery, and donation tools.",
-      bullets: [
-        "The app helps users see prayer times, find the Qibla direction, view Quran and Hadith content, discover nearby mosques, and manage Ramadan-related reminders.",
-        "It also includes a major mosque-finder experience that can surface nearby mosques and draw a shortest road path polyline to a selected mosque.",
-        "Most religious utility features are designed to work with locally stored settings so the app can remain practical and privacy-conscious.",
-      ],
-    },
-    {
-      title: "Mosque Finder and Route Polyline",
-      summary:
-        "The nearby mosque finder and shortest-path route feature depend on location and map-related requests.",
-      bullets: [
-        "Your location may be used to identify nearby mosques around you and sort them by distance.",
-        "When you request directions to a mosque, the app may call routing services to fetch a road-based path and render that path as a polyline on the map.",
-        "Route data is used to display navigation-style guidance inside the app experience and should be treated as location-related data.",
-      ],
-    },
-    {
-      title: "Data We Access",
-      summary:
-        "We only access device data that is needed for the app's core features.",
-      bullets: [
-        "Location may be accessed to calculate accurate prayer times, show the Qibla direction correctly, and help find nearby mosques.",
-        "If you use the mosque-finder route feature, origin and destination coordinates may be processed to generate a shortest path polyline.",
-        "Notification permission may be used for prayer alerts, Azan reminders, Sehri and Iftar alerts, Hadith reminders, and restricted prayer-time alerts.",
-        "Your app preferences such as language, theme, notification choices, Quran display mode, and pinned mosque are stored on your device.",
-      ],
-    },
-    {
-      title: "How Your Data Is Used",
-      summary:
-        "Data is used only to deliver the Islamic features you choose to use.",
-      bullets: [
-        "Location is used to calculate local prayer times and improve map-based or direction-based features.",
-        "Notification settings are used to schedule reminders and alerts at the correct times.",
-        "Saved settings are used to personalize the app experience and restore your choices between sessions.",
-      ],
-    },
-    {
-      title: "What Stays On Your Device",
-      summary:
-        "A large portion of the app's operational data is intended to stay local.",
-      bullets: [
-        "Prayer-time cache, user preferences, notification choices, pinned mosque selection, and display settings are stored locally on your device.",
-        "The app is designed so that core preferences do not require a user account.",
-        "We do not describe the app as selling personal data, and this policy is written for a privacy-first utility app.",
-      ],
-    },
-    {
-      title: "Third-Party and Connected Services",
-      summary:
-        "Some app features rely on external packages or remote content providers.",
-      bullets: [
-        "Map, content, notification, and platform services may involve third-party libraries or APIs that operate according to their own terms and platform rules.",
-        "Mosque-finder and routing features may use remote mosque data sources and routing services to return nearby results and shortest road-path polylines.",
-        "Firebase is initialized by the app platform setup, but this policy should be updated again if future versions add analytics, sign-in, or cloud data sync.",
-        "If remote mosque, Quran, or Hadith content sources are expanded later, the policy should continue to reflect exactly what data is requested and why.",
-      ],
-    },
-    {
-      title: "Your Choices",
-      summary:
-        "You remain in control of permissions and notification behavior.",
-      bullets: [
-        "You can change language, theme, notification settings, Azan preferences, and display preferences from the Settings screen.",
-        "You can deny or revoke location and notification permissions from your device settings, though some features may then become limited.",
-        "If you no longer want locally stored app preferences, clearing app data or uninstalling the app will generally remove them from your device.",
-      ],
-    },
-  ],
-};
-
 export const projects = [
+  {
+    id: 6,
+    title: "Muazzin - Qibla, Salah, Quran",
+    company: "Personal Project",
+    period: "2026 - Present",
+    description:
+      "Privacy-first Android app for Muslims with prayer times, Azan alerts, Qibla compass, nearest mosque finder with directions, Ramadan schedule, and a Quran, Hadith and dua library. Works mostly offline, with no ads or analytics SDKs.",
+    tags: ["Flutter", "Dart", "Android", "Firebase", "OpenStreetMap", "REST APIs"],
+    gradient: "from-teal-500 to-emerald-600",
+    icon: "MZN",
+    hasFullPolicy: true,
+    policyUrl: "muazzin/",
+    privacyPolicy: {
+      intro:
+        "Muazzin keeps data on your device wherever possible. The full privacy policy is shown below.",
+      sections: [],
+    },
+  },
   {
     id: 1,
     title: "Learning Platform Re-Engagement",
